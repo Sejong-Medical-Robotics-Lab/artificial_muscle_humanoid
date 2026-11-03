@@ -1,0 +1,26 @@
+nominal baseline: {'return': 89.90822401123559, 'time_s': 1.0900000000000007, 'fell': True, 'rmse_deg': 16.752462922140175, 'harness_BW_rms': 0.3505500008548459, 'vx_mean': 1.1910048144200278, 'dist_m': 1.28359042524417}
+[eval] steps 50000 time 1.17s fell True rmse 16.7 harness 0.35 vx 1.15 dist 1.33 wall 2.4 min
+[eval] steps 100000 time 1.25s fell True rmse 16.7 harness 0.35 vx 1.11 dist 1.38 wall 4.7 min
+[eval] steps 150000 time 1.31s fell True rmse 16.7 harness 0.35 vx 1.14 dist 1.47 wall 7.0 min
+[eval] steps 200000 time 1.30s fell True rmse 16.4 harness 0.35 vx 1.18 dist 1.52 wall 9.3 min
+[eval] steps 250000 time 1.27s fell True rmse 16.4 harness 0.34 vx 1.16 dist 1.45 wall 11.4 min
+[eval] steps 300000 time 1.38s fell True rmse 17.4 harness 0.34 vx 1.21 dist 1.65 wall 13.4 min
+[eval] steps 350000 time 1.42s fell True rmse 17.3 harness 0.33 vx 1.16 dist 1.64 wall 15.4 min
+[eval] steps 400000 time 1.37s fell True rmse 16.4 harness 0.33 vx 1.18 dist 1.60 wall 17.5 min
+[eval] steps 450000 time 1.45s fell True rmse 16.8 harness 0.34 vx 1.27 dist 1.82 wall 19.6 min
+[eval] steps 500000 time 1.49s fell True rmse 17.8 harness 0.34 vx 1.30 dist 1.92 wall 21.6 min
+[eval] steps 550000 time 2.74s fell True rmse 18.8 harness 0.31 vx 0.92 dist 2.50 wall 23.8 min
+[eval] steps 600000 time 3.09s fell True rmse 16.4 harness 0.28 vx 0.93 dist 2.86 wall 25.9 min
+[eval] steps 650000 time 3.16s fell False rmse 18.8 harness 0.29 vx 0.73 dist 2.30 wall 28.1 min
+[eval] steps 700000 time 2.29s fell True rmse 16.7 harness 0.33 vx 1.05 dist 2.38 wall 30.4 min
+[eval] steps 750000 time 2.15s fell True rmse 18.0 harness 0.31 vx 1.27 dist 2.70 wall 32.7 min
+[eval] steps 800000 time 2.35s fell True rmse 15.1 harness 0.29 vx 0.10 dist 0.24 wall 35.1 min
+[eval] steps 850000 time 1.83s fell True rmse 19.0 harness 0.32 vx 1.14 dist 2.07 wall 37.4 min
+[eval] steps 900000 time 1.93s fell True rmse 18.2 harness 0.30 vx 1.11 dist 2.13 wall 39.9 min
+[eval] steps 950000 time 3.16s fell False rmse 15.8 harness 0.23 vx 0.54 dist 1.71 wall 42.3 min
+[eval] steps 1000000 time 3.16s fell False rmse 15.3 harness 0.21 vx 0.63 dist 1.97 wall 44.8 min
+[eval] steps 1050000 time 3.08s fell True rmse 17.0 harness 0.28 vx 0.86 dist 2.64 wall 47.3 min
+[eval] steps 1100000 time 3.16s fell False rmse 13.4 harness 0.21 vx 0.54 dist 1.69 wall 49.5 min
+[eval] steps 1150000 time 3.16s fell False rmse 15.1 harness 0.22 vx 0.63 dist 1.97 wall 51.8 min
+[eval] steps 1200000 time 3.16s fell False rmse 13.2 harness 0.20 vx 0.51 dist 1.61 wall 54.1 min
+final: {'return': 277.1309104343722, 'time_s': 3.1599999999999766, 'fell': False, 'rmse_deg': 13.226313065395072, 'harness_BW_rms': 0.1927164884017877, 'vx_mean': 0.4915317634483464, 'dist_m': 1.5430735623279297}

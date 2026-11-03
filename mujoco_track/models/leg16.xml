@@ -1,0 +1,353 @@
+<mujoco model="panki_leg16_subject3">
+  <compiler angle="radian" inertiafromgeom="false" autolimits="true"/>
+  <option timestep="0.0005" gravity="0 -9.81 0" integrator="implicitfast" cone="elliptic" impratio="10"/>
+  <size memory="20M"/>
+  <visual><global offwidth="1280" offheight="720"/><headlight ambient="0.4 0.4 0.4"/></visual>
+  <default>
+    <geom contype="0" conaffinity="0" rgba="0.75 0.72 0.7 1"/>
+    <default class="foot"><geom type="sphere" size="0.018" contype="1" conaffinity="1" friction="1.0 0.005 0.0001" solref="0.015 1" solimp="0.9 0.95 0.001" rgba="0.3 0.3 0.35 1"/></default>
+    <joint damping="0.5" armature="0.001" limited="true" solreflimit="0.01 1" solimplimit="0.9 0.95 0.001"/>
+    <site size="0.006" rgba="0.8 0.1 0.2 1"/>
+    <tendon width="0.004" rgba="0.6 0.1 0.15 1"/>
+    <default class="sma"><general ctrllimited="true" ctrlrange="0 1" gaintype="fixed" biastype="none" dyntype="none"/></default>
+  </default>
+  <worldbody>
+    <light pos="0 3 2" dir="0 -1 -0.5" directional="true"/>
+    <geom name="floor" type="plane" size="20 20 0.1" quat="0.70710678 -0.70710678 0 0" contype="1" conaffinity="1" friction="1.0 0.005 0.0001" rgba="0.9 0.9 0.9 1"/>
+    <body name="pelvis" pos="0 0.95 0">
+      <freejoint name="pelvis"/>
+      <inertial pos="-0.0707 0 0" mass="10.3019" fullinertia="0.089923911 0.076190395 0.050647806 0 0 0"/>
+      <geom type="box" pos="-0.07 0 0" size="0.06 0.07 0.12"/>
+      <site name="pelvis_c" pos="0 0 0" size="0.01"/>
+      <site name="M0_r_0" pos="-0.052677497 -0.065697782 0.1068695"/>
+      <site name="M0_l_0" pos="-0.052677497 -0.065697782 -0.1068695"/>
+      <site name="M1_r_0" pos="-0.051853787 -0.066926746 0.052007335"/>
+      <site name="M1_l_0" pos="-0.051853787 -0.066926746 -0.052007335"/>
+      <site name="M2_r_0" pos="-0.035992591 -0.052833918 0.079783593"/>
+      <site name="M2_l_0" pos="-0.035992591 -0.052833918 -0.079783593"/>
+      <site name="M3_r_0" pos="-0.075672424 -0.092431975 0.089424744"/>
+      <site name="M3_l_0" pos="-0.075672424 -0.092431975 -0.089424744"/>
+      <site name="M4_r_0" pos="-0.10303094 -0.10232232 0.060561377"/>
+      <site name="M4_l_0" pos="-0.10303094 -0.10232232 -0.060561377"/>
+      <site name="M5_r_0" pos="-0.11295625 -0.080528871 0.029543024"/>
+      <site name="M5_l_0" pos="-0.11295625 -0.080528871 -0.029543024"/>
+      <site name="M6_r_0" pos="-0.021083329 -0.055181393 0.091937666"/>
+      <site name="M6_l_0" pos="-0.021083329 -0.055181393 -0.091937666"/>
+      <site name="M7_r_0" pos="-0.057772821 -0.072128192 0.088275162"/>
+      <site name="M7_l_0" pos="-0.057772821 -0.072128192 -0.088275162"/>
+      <body name="femur_r" pos="-0.055955519 -0.070394517 0.080328218" quat="1 0 0 0">
+        <inertial pos="0 -0.17 0" mass="8.13636" fullinertia="0.11712852 0.030703592 0.12351417 0 0 0"/>
+        <joint name="hip_flexion_r" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.52 2.1"/>
+        <joint name="hip_adduction_r" type="hinge" pos="0 0 0" axis="1 0 0" range="-0.79 0.52"/>
+        <joint name="hip_rotation_r" type="hinge" pos="0 0 0" axis="0 1 0" range="-3 3"/>
+        <geom type="capsule" fromto="0 0 0 -0.0079591478 -0.40601107 -0.002596861" size="0.02"/>
+        <geom type="capsule" fromto="0 0 0 -0.0079591478 -0.40601107 -0.002596861" size="0.02"/>
+        <site name="M0_r_1" pos="0.069964007 -0.25906844 0.023538806"/>
+        <site name="M1_r_1" pos="-7.4464081e-05 -0.4100913 -0.005786307"/>
+        <site name="M2_r_1" pos="0.014713042 -0.41993361 -0.059941096"/>
+        <site name="M3_r_1" pos="0.039847463 -0.40102132 -0.059956578"/>
+        <site name="M4_r_1" pos="0.013379358 -0.41563821 -0.057387652"/>
+        <site name="M5_r_1" pos="-0.054422744 -0.041506523 -0.039814329"/>
+        <site name="M6_r_1" pos="-0.062749339 -0.34660133 -0.059982123"/>
+        <site name="M7_r_1" pos="0.0075261606 -0.41390325 0.028921385"/>
+        <body name="tibia_r" pos="0.00035271433 -0.40256598 -0.0012398655" quat="1 0 0 0">
+          <inertial pos="0 -0.1867 0" mass="3.24312" fullinertia="0.044087209 0.0044612057 0.044699532 0 0 0"/>
+          <joint name="walker_knee_r_translation1" type="slide" pos="-0.0083118621 -0.0034450866 -0.0013569955" axis="-0.12429404 0.98976169 -0.070162579" range="-0.02 0.02" damping="0"/>
+          <joint name="walker_knee_r_translation2" type="slide" pos="-0.0083118621 -0.0034450866 -0.0013569955" axis="0.99224543 0.12398289 -0.0087894042" range="-0.02 0.02" damping="0"/>
+          <joint name="knee_angle_r" type="hinge" pos="-0.0083118621 -0.0034450866 -0.0013569955" axis="-4.5655752e-07 -0.070710969 -0.99749685" range="-0.05 2.27"/>
+          <joint name="walker_knee_r_rotation2" type="hinge" pos="-0.0083118621 -0.0034450866 -0.0013569955" axis="0.99224543 0.12398289 -0.0087894042" range="-0.5 0.5" damping="0"/>
+          <joint name="walker_knee_r_rotation3" type="hinge" pos="-0.0083118621 -0.0034450866 -0.0013569955" axis="-0.12429404 0.98976169 -0.070162579" range="-0.5 0.5" damping="0"/>
+          <geom type="capsule" fromto="0 0 0 -0.010274827 -0.38984798 0" size="0.02"/>
+          <site name="M0_r_2" pos="-0.047834525 -0.020193109 0.048820534"/>
+          <site name="M1_r_2" pos="0.043781202 -0.32478337 -0.044547831"/>
+          <site name="M2_r_2" pos="0.059940576 -0.25332267 -0.040312737"/>
+          <site name="M3_r_2" pos="0.059632155 -0.020062201 -0.045405888"/>
+          <site name="M4_r_2" pos="0.02492693 -0.39930252 -0.041237626"/>
+          <site name="M5_r_2" pos="-0.047682664 -0.033851126 0.045747409"/>
+          <site name="M6_r_2" pos="-0.022403575 -0.028433004 0.027485893"/>
+          <site name="M7_r_2" pos="0.052357601 -0.024228467 -0.002739742"/>
+          <body name="talus_r" pos="-0.010274827 -0.38984798 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="0.0874746" fullinertia="0.0008747462 0.0008747462 0.0008747462 0 0 0"/>
+            <joint name="ankle_angle_r" type="hinge" pos="0 0 0" axis="-0.10501402 -0.17402184 0.97912637" range="-0.87 0.52"/>
+            <geom type="capsule" fromto="0 0 0 -0.039917147 -0.053621976 0.0090916758" size="0.02"/>
+            <body name="calcn_r" pos="-0.039917147 -0.053621976 0.0090916758" quat="1 0 0 0">
+              <inertial pos="0.1 0.03 0" mass="1.09343" fullinertia="0.0012246447 0.0034115102 0.0035864595 0 0 0"/>
+              <joint name="subtalar_angle_r" type="hinge" pos="0 0 0" axis="0.78718 0.6047472 -0.12094825" range="-3 3"/>
+              <geom type="capsule" fromto="0 0 0 0.1664496 -0.0018887938 0.0012076428" size="0.02"/>
+              <geom class="foot" name="calcn_r_heel" pos="0.005 0.0121 0.0"/>
+              <geom class="foot" name="calcn_r_mid_l" pos="0.09 0.0121 0.03"/>
+              <geom class="foot" name="calcn_r_mid_m" pos="0.09 0.0121 -0.03"/>
+              <geom class="foot" name="calcn_r_toe" pos="0.165 0.0121 0.0"/>
+              <geom type="box" pos="0.085 -0.02 0" size="0.09 0.012 0.035" rgba="0.5 0.45 0.4 1"/>
+              <site name="M1_r_3" pos="0.03977016 0.041493898 0.015263376"/>
+              <site name="M3_r_3" pos="-0.015812394 0.035467393 0.049999989"/>
+              <site name="M4_r_3" pos="0.048441274 0.016372085 0.022047616"/>
+              <site name="M5_r_3" pos="0.0054599934 0.027861906 -0.049999891"/>
+              <site name="M6_r_3" pos="0.00013146271 0.035735338 -0.0036147847"/>
+              <site name="M7_r_3" pos="0.046759706 0.039108266 0.035978028"/>
+              <body name="toes_r" pos="0.1664496 -0.0018887938 0.0012076428" quat="1 0 0 0">
+                <inertial pos="0.0346 0.006 -0.0175" mass="0.18947" fullinertia="0.0005515275 0.0006390021 0.0008747462 0 0 0"/>
+                <joint name="mtp_angle_r" type="hinge" pos="0 0 0" axis="0.58095458 2.1598522e-06 -0.81393598" range="-3 3"/>
+                <geom class="foot" name="toes_r_tip" pos="0.045 0.0214 0.0"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="femur_l" pos="-0.055955519 -0.070394517 -0.080328218" quat="1 0 0 0">
+        <inertial pos="0 -0.17 0" mass="8.13636" fullinertia="0.11712852 0.030703592 0.12351417 0 0 0"/>
+        <joint name="hip_flexion_l" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.52 2.1"/>
+        <joint name="hip_adduction_l" type="hinge" pos="0 0 0" axis="-1 0 0" range="-0.79 0.52"/>
+        <joint name="hip_rotation_l" type="hinge" pos="0 0 0" axis="0 -1 0" range="-3 3"/>
+        <geom type="capsule" fromto="0 0 0 -0.0079591478 -0.40601107 0.002596861" size="0.02"/>
+        <geom type="capsule" fromto="0 0 0 -0.0079591478 -0.40601107 0.002596861" size="0.02"/>
+        <site name="M0_l_1" pos="0.069964007 -0.25906844 -0.023538806"/>
+        <site name="M1_l_1" pos="-7.4464081e-05 -0.4100913 0.005786307"/>
+        <site name="M2_l_1" pos="0.014713042 -0.41993361 0.059941096"/>
+        <site name="M3_l_1" pos="0.039847463 -0.40102132 0.059956578"/>
+        <site name="M4_l_1" pos="0.013379358 -0.41563821 0.057387652"/>
+        <site name="M5_l_1" pos="-0.054422744 -0.041506523 0.039814329"/>
+        <site name="M6_l_1" pos="-0.062749339 -0.34660133 0.059982123"/>
+        <site name="M7_l_1" pos="0.0075261606 -0.41390325 -0.028921385"/>
+        <body name="tibia_l" pos="0.00035271433 -0.40256598 0.0012398655" quat="1 0 0 0">
+          <inertial pos="0 -0.1867 0" mass="3.24312" fullinertia="0.044087209 0.0044612057 0.044699532 0 0 0"/>
+          <joint name="walker_knee_l_translation1" type="slide" pos="-0.0083118621 -0.0034450866 0.0013569955" axis="-0.12429404 0.98976169 0.070162579" range="-0.02 0.02" damping="0"/>
+          <joint name="walker_knee_l_translation2" type="slide" pos="-0.0083118621 -0.0034450866 0.0013569955" axis="-0.99224543 -0.12398289 -0.0087894042" range="-0.02 0.02" damping="0"/>
+          <joint name="knee_angle_l" type="hinge" pos="-0.0083118621 -0.0034450866 0.0013569955" axis="4.5655752e-07 0.070710969 -0.99749685" range="-0.05 2.27"/>
+          <joint name="walker_knee_l_rotation2" type="hinge" pos="-0.0083118621 -0.0034450866 0.0013569955" axis="-0.99224543 -0.12398289 -0.0087894042" range="-0.5 0.5" damping="0"/>
+          <joint name="walker_knee_l_rotation3" type="hinge" pos="-0.0083118621 -0.0034450866 0.0013569955" axis="-0.12429404 0.98976169 0.070162579" range="-0.5 0.5" damping="0"/>
+          <geom type="capsule" fromto="0 0 0 -0.010274827 -0.38984798 0" size="0.02"/>
+          <site name="M0_l_2" pos="-0.047834525 -0.020193109 -0.048820534"/>
+          <site name="M1_l_2" pos="0.043781202 -0.32478337 0.044547831"/>
+          <site name="M2_l_2" pos="0.059940576 -0.25332267 0.040312737"/>
+          <site name="M3_l_2" pos="0.059632155 -0.020062201 0.045405888"/>
+          <site name="M4_l_2" pos="0.02492693 -0.39930252 0.041237626"/>
+          <site name="M5_l_2" pos="-0.047682664 -0.033851126 -0.045747409"/>
+          <site name="M6_l_2" pos="-0.022403575 -0.028433004 -0.027485893"/>
+          <site name="M7_l_2" pos="0.052357601 -0.024228467 0.002739742"/>
+          <body name="talus_l" pos="-0.010274827 -0.38984798 0" quat="1 0 0 0">
+            <inertial pos="0 0 0" mass="0.0874746" fullinertia="0.0008747462 0.0008747462 0.0008747462 0 0 0"/>
+            <joint name="ankle_angle_l" type="hinge" pos="0 0 0" axis="0.10501402 0.17402184 0.97912637" range="-0.87 0.52"/>
+            <geom type="capsule" fromto="0 0 0 -0.039917147 -0.053621976 -0.0090916758" size="0.02"/>
+            <body name="calcn_l" pos="-0.039917147 -0.053621976 -0.0090916758" quat="1 0 0 0">
+              <inertial pos="0.1 0.03 0" mass="1.09343" fullinertia="0.0012246447 0.0034115102 0.0035864595 0 0 0"/>
+              <joint name="subtalar_angle_l" type="hinge" pos="0 0 0" axis="-0.78718 -0.6047472 -0.12094825" range="-3 3"/>
+              <geom type="capsule" fromto="0 0 0 0.1664496 -0.0018887938 -0.0012076428" size="0.02"/>
+              <geom class="foot" name="calcn_l_heel" pos="0.005 0.0121 0.0"/>
+              <geom class="foot" name="calcn_l_mid_l" pos="0.09 0.0121 0.03"/>
+              <geom class="foot" name="calcn_l_mid_m" pos="0.09 0.0121 -0.03"/>
+              <geom class="foot" name="calcn_l_toe" pos="0.165 0.0121 0.0"/>
+              <geom type="box" pos="0.085 -0.02 0" size="0.09 0.012 0.035" rgba="0.5 0.45 0.4 1"/>
+              <site name="M1_l_3" pos="0.03977016 0.041493898 -0.015263376"/>
+              <site name="M3_l_3" pos="-0.015812394 0.035467393 -0.049999989"/>
+              <site name="M4_l_3" pos="0.048441274 0.016372085 -0.022047616"/>
+              <site name="M5_l_3" pos="0.0054599934 0.027861906 0.049999891"/>
+              <site name="M6_l_3" pos="0.00013146271 0.035735338 0.0036147847"/>
+              <site name="M7_l_3" pos="0.046759706 0.039108266 -0.035978028"/>
+              <body name="toes_l" pos="0.1664496 -0.0018887938 -0.0012076428" quat="1 0 0 0">
+                <inertial pos="0.0346 0.006 -0.0175" mass="0.18947" fullinertia="0.0005515275 0.0006390021 0.0008747462 0 0 0"/>
+                <joint name="mtp_angle_l" type="hinge" pos="0 0 0" axis="-0.58095458 2.1598522e-06 -0.81393598" range="-3 3"/>
+                <geom class="foot" name="toes_l_tip" pos="0.045 0.0214 0.0"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="torso" pos="-0.10012653 0.073094065 0" quat="1 0 0 0">
+        <inertial pos="-0.03 0.32 0" mass="23.4665" fullinertia="1.2898133 0.66087077 1.2521117 0 0 0"/>
+        <joint name="lumbar_extension" type="hinge" pos="0 0 0" axis="0 0 1" range="-3 3"/>
+        <joint name="lumbar_bending" type="hinge" pos="0 0 0" axis="1 0 0" range="-3 3"/>
+        <joint name="lumbar_rotation" type="hinge" pos="0 0 0" axis="0 1 0" range="-3 3"/>
+        <geom type="capsule" fromto="0 0 0 0.003367208 0.37844252 0.14275002" size="0.02"/>
+        <geom type="capsule" fromto="0 0 0 0.003367208 0.37844252 -0.14275002" size="0.02"/>
+        <body name="humerus_r" pos="0.003367208 0.37844252 0.14275002" quat="1 0 0 0">
+          <inertial pos="0 -0.164502 0" mass="1.77792" fullinertia="0.010449718 0.0036048292 0.011729472 0 0 0"/>
+          <joint name="arm_flex_r" type="hinge" pos="0 0 0" axis="0 0 1" range="-3 3"/>
+          <joint name="arm_add_r" type="hinge" pos="0 0 0" axis="1 0 0" range="-3 3"/>
+          <joint name="arm_rot_r" type="hinge" pos="0 0 0" axis="0 1 0" range="-3 3"/>
+          <geom type="capsule" fromto="0 0 0 0.013975477 -0.29640526 -0.0073890925" size="0.02"/>
+          <body name="ulna_r" pos="0.013975477 -0.29640526 -0.0073890925" quat="1 0 0 0">
+            <inertial pos="0 -0.120525 0" mass="0.531408" fullinertia="0.0025909983 0.0005405932 0.0028105596 0 0 0"/>
+            <joint name="elbow_flex_r" type="hinge" pos="0 0 0" axis="0.22604727 0.022268989 0.97386176" range="-3 3"/>
+            <body name="radius_r" pos="-0.0074580967 -0.012125573 0.02538116" quat="1 0 0 0">
+              <inertial pos="0 -0.120525 0" mass="0.531408" fullinertia="0.0025909983 0.0005405932 0.0028105596 0 0 0"/>
+              <joint name="pro_sup_r" type="hinge" pos="0 0 0" axis="0.056398059 0.99840645 0.0019532118" range="-3 3"/>
+              <geom type="capsule" fromto="0 0 0 -0.0097530663 -0.2198591 0.013243783" size="0.02"/>
+              <body name="hand_r" pos="-0.0097530663 -0.2198591 0.013243783" quat="1 0 0 0">
+                <inertial pos="0 -0.068095 0" mass="0.400196" fullinertia="0.0007802736 0.0004784862 0.0011721599 0 0 0"/>
+                <joint name="wrist_flex_r" type="hinge" pos="0 0 0" axis="-3.6732051e-06 3.6732051e-06 1" range="-3 3"/>
+                <joint name="wrist_dev_r" type="hinge" pos="0 0 0" axis="1 1.3492436e-11 3.6732051e-06" range="-3 3"/>
+              </body>
+            </body>
+          </body>
+        </body>
+        <body name="humerus_l" pos="0.003367208 0.37844252 -0.14275002" quat="1 0 0 0">
+          <inertial pos="0 -0.164502 0" mass="1.77792" fullinertia="0.010449718 0.0036048292 0.011729472 0 0 0"/>
+          <joint name="arm_flex_l" type="hinge" pos="0 0 0" axis="0 0 1" range="-3 3"/>
+          <joint name="arm_add_l" type="hinge" pos="0 0 0" axis="-1 0 0" range="-3 3"/>
+          <joint name="arm_rot_l" type="hinge" pos="0 0 0" axis="0 -1 0" range="-3 3"/>
+          <geom type="capsule" fromto="0 0 0 0.013975477 -0.29640526 0.0073890925" size="0.02"/>
+          <body name="ulna_l" pos="0.013975477 -0.29640526 0.0073890925" quat="1 0 0 0">
+            <inertial pos="0 -0.120525 0" mass="0.531408" fullinertia="0.0025909983 0.0005405932 0.0028105596 0 0 0"/>
+            <joint name="elbow_flex_l" type="hinge" pos="0 0 0" axis="-0.22604727 -0.022268989 0.97386176" range="-3 3"/>
+            <body name="radius_l" pos="-0.0074580967 -0.012125573 -0.02538116" quat="1 0 0 0">
+              <inertial pos="0 -0.120525 0" mass="0.531408" fullinertia="0.0025909983 0.0005405932 0.0028105596 0 0 0"/>
+              <joint name="pro_sup_l" type="hinge" pos="0 0 0" axis="-0.056398059 -0.99840645 0.0019532118" range="-3 3"/>
+              <geom type="capsule" fromto="0 0 0 -0.0097530663 -0.2198591 -0.013243783" size="0.02"/>
+              <body name="hand_l" pos="-0.0097530663 -0.2198591 -0.013243783" quat="1 0 0 0">
+                <inertial pos="0 -0.068095 0" mass="0.400196" fullinertia="0.0007802736 0.0004784862 0.0011721599 0 0 0"/>
+                <joint name="wrist_flex_l" type="hinge" pos="0 0 0" axis="-3.6732051e-06 -3.6732051e-06 1" range="-3 3"/>
+                <joint name="wrist_dev_l" type="hinge" pos="0 0 0" axis="-1 1.3492436e-11 -3.6732051e-06" range="-3 3"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="eq_hip_rotation_r" joint1="hip_rotation_r" polycoef="-0.15428261 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_walker_knee_r_translation1" joint1="walker_knee_r_translation1" joint2="knee_angle_r" polycoef="-4.474978e-06 0.0031350258 -0.0023265297 0.00057444215 -2.1213386e-06" solref="0.002 1"/>
+    <joint name="eq_walker_knee_r_translation2" joint1="walker_knee_r_translation2" joint2="knee_angle_r" polycoef="-2.7701228e-06 0.0055681203 -0.0012144013 1.7068158e-05 -4.0392752e-06" solref="0.002 1"/>
+    <joint name="eq_walker_knee_r_rotation2" joint1="walker_knee_r_rotation2" joint2="knee_angle_r" polycoef="-5.0940303e-05 0.079199467 -0.032712135 -0.025501606 0.010937338" solref="0.002 1"/>
+    <joint name="eq_walker_knee_r_rotation3" joint1="walker_knee_r_rotation3" joint2="knee_angle_r" polycoef="-0.00036664025 0.37136156 -0.17240232 0.026960229 -0.00037753523" solref="0.002 1"/>
+    <joint name="eq_subtalar_angle_r" joint1="subtalar_angle_r" polycoef="0.01861229 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_mtp_angle_r" joint1="mtp_angle_r" polycoef="-0.00040485 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_hip_rotation_l" joint1="hip_rotation_l" polycoef="-0.083177079 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_walker_knee_l_translation1" joint1="walker_knee_l_translation1" joint2="knee_angle_l" polycoef="-4.474978e-06 0.0031350258 -0.0023265297 0.00057444215 -2.1213386e-06" solref="0.002 1"/>
+    <joint name="eq_walker_knee_l_translation2" joint1="walker_knee_l_translation2" joint2="knee_angle_l" polycoef="2.7701228e-06 -0.0055681203 0.0012144013 -1.7068158e-05 4.0392752e-06" solref="0.002 1"/>
+    <joint name="eq_walker_knee_l_rotation2" joint1="walker_knee_l_rotation2" joint2="knee_angle_l" polycoef="-5.0940303e-05 0.079199467 -0.032712135 -0.025501606 0.010937338" solref="0.002 1"/>
+    <joint name="eq_walker_knee_l_rotation3" joint1="walker_knee_l_rotation3" joint2="knee_angle_l" polycoef="0.00036664025 -0.37136156 0.17240232 -0.026960229 0.00037753523" solref="0.002 1"/>
+    <joint name="eq_subtalar_angle_l" joint1="subtalar_angle_l" polycoef="0.0203467 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_mtp_angle_l" joint1="mtp_angle_l" polycoef="-0.00088755 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_lumbar_extension" joint1="lumbar_extension" polycoef="-0.13721825 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_lumbar_bending" joint1="lumbar_bending" polycoef="0.021323307 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_lumbar_rotation" joint1="lumbar_rotation" polycoef="-0.0760902 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_arm_flex_r" joint1="arm_flex_r" polycoef="-0.099908377 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_arm_add_r" joint1="arm_add_r" polycoef="-0.23627502 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_arm_rot_r" joint1="arm_rot_r" polycoef="-0.0049999601 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_elbow_flex_r" joint1="elbow_flex_r" polycoef="0.57215079 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_pro_sup_r" joint1="pro_sup_r" polycoef="1.3598853 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_wrist_flex_r" joint1="wrist_flex_r" polycoef="-9.351e-05 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_wrist_dev_r" joint1="wrist_dev_r" polycoef="0.00046255 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_arm_flex_l" joint1="arm_flex_l" polycoef="-0.11323181 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_arm_add_l" joint1="arm_add_l" polycoef="-0.1971526 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_arm_rot_l" joint1="arm_rot_l" polycoef="-0.25409398 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_elbow_flex_l" joint1="elbow_flex_l" polycoef="0.7191342 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_pro_sup_l" joint1="pro_sup_l" polycoef="1.479839 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_wrist_flex_l" joint1="wrist_flex_l" polycoef="-0.00013359 0 0 0 0" solref="0.002 1"/>
+    <joint name="eq_wrist_dev_l" joint1="wrist_dev_l" polycoef="0.00030875 0 0 0 0" solref="0.002 1"/>
+  </equality>
+  <tendon>
+    <spatial name="M0_r">
+      <site site="M0_r_0"/>
+      <site site="M0_r_1"/>
+      <site site="M0_r_2"/>
+    </spatial>
+    <spatial name="M0_l">
+      <site site="M0_l_0"/>
+      <site site="M0_l_1"/>
+      <site site="M0_l_2"/>
+    </spatial>
+    <spatial name="M1_r">
+      <site site="M1_r_0"/>
+      <site site="M1_r_1"/>
+      <site site="M1_r_2"/>
+      <site site="M1_r_3"/>
+    </spatial>
+    <spatial name="M1_l">
+      <site site="M1_l_0"/>
+      <site site="M1_l_1"/>
+      <site site="M1_l_2"/>
+      <site site="M1_l_3"/>
+    </spatial>
+    <spatial name="M2_r">
+      <site site="M2_r_0"/>
+      <site site="M2_r_1"/>
+      <site site="M2_r_2"/>
+    </spatial>
+    <spatial name="M2_l">
+      <site site="M2_l_0"/>
+      <site site="M2_l_1"/>
+      <site site="M2_l_2"/>
+    </spatial>
+    <spatial name="M3_r">
+      <site site="M3_r_0"/>
+      <site site="M3_r_1"/>
+      <site site="M3_r_2"/>
+      <site site="M3_r_3"/>
+    </spatial>
+    <spatial name="M3_l">
+      <site site="M3_l_0"/>
+      <site site="M3_l_1"/>
+      <site site="M3_l_2"/>
+      <site site="M3_l_3"/>
+    </spatial>
+    <spatial name="M4_r">
+      <site site="M4_r_0"/>
+      <site site="M4_r_1"/>
+      <site site="M4_r_2"/>
+      <site site="M4_r_3"/>
+    </spatial>
+    <spatial name="M4_l">
+      <site site="M4_l_0"/>
+      <site site="M4_l_1"/>
+      <site site="M4_l_2"/>
+      <site site="M4_l_3"/>
+    </spatial>
+    <spatial name="M5_r">
+      <site site="M5_r_0"/>
+      <site site="M5_r_1"/>
+      <site site="M5_r_2"/>
+      <site site="M5_r_3"/>
+    </spatial>
+    <spatial name="M5_l">
+      <site site="M5_l_0"/>
+      <site site="M5_l_1"/>
+      <site site="M5_l_2"/>
+      <site site="M5_l_3"/>
+    </spatial>
+    <spatial name="M6_r">
+      <site site="M6_r_0"/>
+      <site site="M6_r_1"/>
+      <site site="M6_r_2"/>
+      <site site="M6_r_3"/>
+    </spatial>
+    <spatial name="M6_l">
+      <site site="M6_l_0"/>
+      <site site="M6_l_1"/>
+      <site site="M6_l_2"/>
+      <site site="M6_l_3"/>
+    </spatial>
+    <spatial name="M7_r">
+      <site site="M7_r_0"/>
+      <site site="M7_r_1"/>
+      <site site="M7_r_2"/>
+      <site site="M7_r_3"/>
+    </spatial>
+    <spatial name="M7_l">
+      <site site="M7_l_0"/>
+      <site site="M7_l_1"/>
+      <site site="M7_l_2"/>
+      <site site="M7_l_3"/>
+    </spatial>
+  </tendon>
+  <actuator>
+    <general class="sma" name="M0_r" tendon="M0_r" gainprm="-1788.25"/>
+    <general class="sma" name="M0_l" tendon="M0_l" gainprm="-1788.25"/>
+    <general class="sma" name="M1_r" tendon="M1_r" gainprm="-1597.58"/>
+    <general class="sma" name="M1_l" tendon="M1_l" gainprm="-1597.58"/>
+    <general class="sma" name="M2_r" tendon="M2_r" gainprm="-2965.23"/>
+    <general class="sma" name="M2_l" tendon="M2_l" gainprm="-2965.23"/>
+    <general class="sma" name="M3_r" tendon="M3_r" gainprm="-2132.97"/>
+    <general class="sma" name="M3_l" tendon="M3_l" gainprm="-2132.97"/>
+    <general class="sma" name="M4_r" tendon="M4_r" gainprm="-3459.9"/>
+    <general class="sma" name="M4_l" tendon="M4_l" gainprm="-3459.9"/>
+    <general class="sma" name="M5_r" tendon="M5_r" gainprm="-589.923"/>
+    <general class="sma" name="M5_l" tendon="M5_l" gainprm="-589.923"/>
+    <general class="sma" name="M6_r" tendon="M6_r" gainprm="-3355.74"/>
+    <general class="sma" name="M6_l" tendon="M6_l" gainprm="-3355.74"/>
+    <general class="sma" name="M7_r" tendon="M7_r" gainprm="-3242.1"/>
+    <general class="sma" name="M7_l" tendon="M7_l" gainprm="-3242.1"/>
+  </actuator>
+</mujoco>
